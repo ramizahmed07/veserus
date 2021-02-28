@@ -1,0 +1,212 @@
+@import "../../css/styles/mixins.scss";
+@import "../../css/styles/_colors.scss";
+
+.plans {
+  &__cover {
+    @include cover(#282e3a);
+    &__img {
+      @include coverImg;
+      @include desktop-sm {
+        right: 50px;
+        width: 450px;
+      }
+      @include tablet {
+        height: 232px;
+        width: 321px;
+        right: 20px;
+      }
+      @include mobile {
+        width: 174px;
+        height: 126px;
+        right: 0 !important;
+        bottom: 0;
+        left: unset;
+        top: unset;
+        margin: unset;
+      }
+    }
+  }
+
+  &__content {
+    @include content;
+    top: -265px !important;
+    margin-bottom: -90px;
+    @include tablet {
+      top: -210px !important;
+    }
+    @include mobile {
+      top: -170px !important;
+      padding: 0;
+    }
+    &__title {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 100px;
+      @include tablet {
+        margin-bottom: 68px;
+      }
+      @include mobile {
+        margin-bottom: 22px;
+      }
+      &__content {
+        display: flex;
+        align-items: center;
+        margin-bottom: 16px;
+
+        @include tablet {
+          margin-bottom: 12px;
+        }
+        @include mobile {
+          margin-bottom: 12px;
+        }
+      }
+      p {
+        color: #cad3de;
+        font-size: 20px;
+        width: 573px;
+        line-height: 30px;
+        margin-left: 69px !important;
+        @include tablet {
+          color: #fff;
+
+          font-size: 17px;
+          margin-left: 53px !important;
+        }
+        @include mobile {
+          font-size: 14px;
+          color: #fff;
+
+          width: 256px;
+          line-height: 20px;
+
+          margin-left: 30px !important;
+        }
+      }
+      img {
+        @include contentBackArrow;
+      }
+      div {
+        @include contentMainHeading(white);
+      }
+    }
+
+    &__table {
+      padding-top: 60px;
+      @include tablet {
+        padding-top: 40px;
+      }
+      @include tablet {
+        padding-top: 40px;
+      }
+      @include mobile {
+        padding-top: 0px;
+      }
+      th {
+        color: #11243e;
+        font-size: 18px;
+        font-family: "Sohne 600", sans-serif;
+        @include mobile {
+          font-size: 13px;
+        }
+      }
+      td,
+      th {
+        border: none;
+      }
+      td {
+        font-family: "Circular Std", sans-serif;
+        font-size: 17px;
+        color: #465364;
+        @include mobile {
+          font-size: 14px;
+        }
+      }
+      &__colorfulRow {
+        background: #fbfbfc;
+      }
+    }
+
+    &__pr {
+      margin: 60px 0;
+      @include tablet {
+        margin: 30px 0;
+      }
+      @include mobile {
+        margin: 26px 0;
+        padding: 0 20px;
+      }
+      &__title {
+        margin-bottom: 20px;
+        color: #11243e;
+        font-size: 26px;
+        font-family: "Sohne 600", sans-serif;
+        @include tablet {
+          font-size: 20px;
+          margin-bottom: 14px;
+        }
+        @include mobile {
+          font-size: 20px;
+          margin-bottom: 12px;
+        }
+      }
+      p {
+        font-size: 17px;
+        line-height: 27px;
+        color: #293340;
+        @include tablet {
+          font-size: 16px;
+          line-height: 25px;
+        }
+        @include mobile {
+          font-size: 15px;
+          line-height: 23px;
+        }
+      }
+    }
+
+    &__features {
+      padding-top: 20px;
+      width: 100%;
+
+      &__feature {
+        min-width: 250px;
+        max-width: 285px;
+        margin-bottom: 48px;
+        @include mobile {
+          padding: 0 20px;
+          max-width: 100% !important;
+          min-width: 100% !important;
+          // margin: ;
+        }
+        &__image {
+          width: 50px;
+          height: 50px;
+          max-width: 50px;
+          max-height: 50px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          img {
+            object-fit: contain;
+          }
+        }
+        &__title {
+          margin-top: 24px;
+          margin-bottom: 32px;
+          font-family: "Inter Medium", sans-serif;
+          font-size: 18px;
+          line-height: 27px;
+          color: #293340;
+        }
+        p {
+          margin-bottom: 13px;
+          font-size: 15px;
+          img {
+            padding-right: 5px;
+          }
+        }
+      }
+    }
+  }
+}

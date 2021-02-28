@@ -1,0 +1,71 @@
+@import "../../css/styles/colors";
+@import "../../css/styles/mixins.scss";
+
+.notFound {
+  // @include mobile
+  &__cover {
+    @include cover(rgb(167, 167, 167));
+    &__img {
+      @include coverImg;
+      @include desktop-sm {
+        right: 50px;
+        width: 450px;
+        object-fit: contain;
+      }
+      @include tablet {
+        right: 20px;
+        width: 334px;
+        height: 250px;
+        object-fit: contain;
+      }
+      @include mobile {
+        width: 327px;
+        height: 245px;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      }
+    }
+  }
+  &__content {
+    @include content;
+    top: -200px;
+    margin-bottom: -100px;
+    @include tablet {
+      top: -155px;
+    }
+    @include mobile {
+      top: -100px;
+    }
+    &__title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 70px;
+      @include tablet {
+        margin-bottom: 55px;
+      }
+      @include mobile {
+        margin-bottom: 20px;
+      }
+
+      img {
+        // margin-right: 45px;
+        // object-fit: contain;
+        // @include tablet {
+        //   margin-right: 25px;
+        // }
+        // @include mobile {
+        //   width: 20px;
+        //   height: 16px;
+        //   margin-right: 10px;
+        // }
+        @include contentBackArrow;
+      }
+      div {
+        @include contentMainHeading(white);
+      }
+    }
+  }
+}

@@ -1,0 +1,96 @@
+/* --- 300 --- */
+@font-face {
+  font-family: "Sohne 300";
+  src: local("Sohne Leicht"),
+    url("fonts/soehne-test-leicht.woff") format("woff");
+  font-style: normal;
+}
+/* --- 400 --- */
+@font-face {
+  font-family: "Sohne 400";
+  src: local("Sohne Buch"), url("fonts/soehne-test-buch.woff") format("woff");
+  font-style: normal;
+}
+
+/* --- 500 --- */
+@font-face {
+  font-family: "Sohne 500";
+  src: local("Sohne Kraftig"),
+    url("fonts/soehne-test-kraftig.woff") format("woff");
+  font-style: normal;
+}
+
+/* --- 600 --- */
+@font-face {
+  font-family: "Sohne 600";
+  src: local("Sohne Halbfett"),
+    url("fonts/soehne-test-halbfett.woff") format("woff");
+  font-style: normal;
+}
+
+/* --- 700 --- */
+@font-face {
+  font-family: "Sohne 700";
+  src: local("Sohne Dreiviertelfett"),
+    url("fonts/soehne-test-dreiviertelfett.woff") format("woff");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Circular Std";
+  src: local("Circular Std"), url("fonts/CircularStd-Book.woff") format("woff");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter Medium";
+  src: local("Inter Medium"), url("fonts/Inter-Medium.woff2") format("woff2"),
+    url("fonts/Inter-Medium.woff") format("woff");
+  font-style: normal;
+}
+@font-face {
+  font-family: "Inter SemiBold";
+  src: local("Inter SemiBold"),
+    url("fonts/Inter-Semibold.woff2") format("woff2"),
+    url("fonts/Inter-Semibold.woff") format("woff");
+  font-style: normal;
+}
+
+// @font-face {
+//   font-family: "Inter SemiBold";
+//   src: local("Inter SemiBold"),
+//     url("fonts/Inter-SemiBold.woff2") format("woff2"),
+//     url("fonts/Inter-SemiBold.woff") format("woff");
+//   font-style: normal;
+// }
+
+@font-face {
+  font-family: "Inter Regular";
+  src: local("Inter Regular"), url("fonts/Inter-Regular.woff2") format("woff2"),
+    url("fonts/Inter-Regular.woff") format("woff");
+  font-style: normal;
+}
+
+// @font-face {
+//   font-family: "Inter Medium";
+//   src: local("Inter Medium"),
+//     url("fonts/Inter-Medium.woff2") format("woff2"),
+//     url("fonts/Inter-Medium.woff") format("woff");
+//   font-style: normal;
+// }
+
+// @font-face {
+//   font-family: "Inter Semibold";
+//   src: local("Inter Semibold"),
+//     url("fonts/Inter-Semibold.woff2") format("woff2"),
+//     url("fonts/Inter-Semibold.woff") format("woff");
+//   font-style: normal;
+// }
+
+// @font-face {
+//   font-family: "Inter Bold";
+//   src: local("Inter Regular"),
+//     url("fonts/Inter-Bold.woff2") format("woff2"),
+//     url("fonts/Inter-Bold.woff") format("woff");
+//   font-style: normal;
+// }

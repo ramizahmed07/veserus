@@ -1,0 +1,224 @@
+@import "../../css/styles/colors";
+@import "../../css/styles/mixins.scss";
+
+.aboutUs {
+  // @include mobile
+  &__cover {
+    @include cover(#28373a);
+    &__img {
+      @include coverImg;
+      @include desktop-sm {
+        right: 50px;
+        width: 450px;
+        object-fit: contain;
+      }
+      @include tablet {
+        right: 20px;
+        width: 334px;
+        height: 250px;
+        object-fit: contain;
+      }
+      @include mobile {
+        width: 327px;
+        height: 245px;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      }
+    }
+  }
+  &__content {
+    @include content;
+    top: -200px;
+    margin-bottom: -100px;
+    @include tablet {
+      top: -155px;
+    }
+    @include mobile {
+      top: -100px;
+    }
+    &__title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 70px;
+      @include tablet {
+        margin-bottom: 55px;
+      }
+      @include mobile {
+        margin-bottom: 20px;
+      }
+
+      img {
+        // margin-right: 45px;
+        // object-fit: contain;
+        // @include tablet {
+        //   margin-right: 25px;
+        // }
+        // @include mobile {
+        //   width: 20px;
+        //   height: 16px;
+        //   margin-right: 10px;
+        // }
+        @include contentBackArrow;
+      }
+      div {
+        @include contentMainHeading(white);
+      }
+    }
+
+    &__tabs {
+      width: max-content;
+    }
+
+    &__paragraphs {
+      margin-top: 12vh;
+      @include tablet {
+        margin-top: 5vh;
+      }
+      @include mobile {
+        margin-top: 5vh;
+      }
+      &__pr {
+        margin-bottom: 60px;
+        @include tablet {
+          margin-bottom: 40px;
+        }
+        @include mobile {
+          margin-bottom: 30px;
+        }
+        &--top {
+          font-size: 20px !important;
+          line-height: 30px;
+          margin-bottom: 60px;
+          @include tablet {
+            display: none;
+          }
+          @include mobile {
+            display: none;
+          }
+          // @include {}
+        }
+
+        p {
+          font-size: 17px;
+          line-height: 28px;
+          margin-bottom: 25px;
+          @include tablet {
+            line-height: 22px;
+            font-size: 15px;
+          }
+          @include mobile {
+            font-size: 15px;
+          }
+        }
+
+        div {
+          font-family: "Sohne 600", sans-serif;
+          color: $heading-color;
+          font-size: 26px;
+          margin-bottom: 25px;
+          @include tablet {
+            margin-bottom: 20px;
+
+            font-size: 22px;
+          }
+          @include mobile {
+            font-size: 20px;
+            margin-bottom: 12px;
+          }
+        }
+      }
+
+      &__contacts {
+        background-color: #f7f9fc;
+        margin: 0 -30px;
+        padding: 50px 30px 0 30px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 50px;
+        @include tablet {
+          margin: 0 -3.25%;
+          padding-left: 3.25%;
+          padding-right: 3.25%;
+          margin-bottom: 50px;
+        }
+        @include mobile {
+          margin: 0 -20px;
+          padding-top: 26px;
+          padding-bottom: 26px;
+          padding-left: 20px;
+          padding-right: 20px;
+          margin-bottom: 30px;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        &__contact {
+          height: 150px;
+          margin-right: 100px;
+          @include mobile {
+            margin-right: 0;
+            height: auto;
+            margin-bottom: 24px;
+          }
+          &__title {
+            font-size: 20px;
+            font-family: "Sohne 500", sans-serif;
+
+            color: #11243e;
+            padding-left: 18px;
+            padding-top: 1px;
+            padding-bottom: 1px;
+            border-left: 1px solid black;
+            @include tablet {
+              font-size: 16px;
+            }
+            @include mobile {
+              font-size: 15px;
+              padding-left: 0;
+              border: none;
+            }
+          }
+
+          &__emails {
+            margin-top: 16px;
+            margin-left: 18px;
+            font-size: 15px;
+            color: #6b7a8a;
+            @include tablet {
+              font-size: 14px;
+            }
+
+            @include mobile {
+              font-size: 14px;
+              margin-top: 10px;
+              margin-left: 0;
+            }
+
+            p {
+              line-height: 24px;
+              @include tablet {
+                // line-height: px;
+              }
+            }
+          }
+        }
+      }
+      &__contactBtn {
+        background: $secondary-color;
+        width: 280px;
+        height: 42px;
+        color: #3d4451;
+        position: relative;
+        top: -10px;
+        margin-bottom: 25px;
+        font-family: "Inter SemiBold", sans-serif;
+        @include mobile {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}

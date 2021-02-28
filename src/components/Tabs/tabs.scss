@@ -1,0 +1,32 @@
+@import "../../css/styles/colors";
+@import "../../css/styles/mixins";
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__tab {
+    background-color: #7d8d91;
+    color: white;
+    height: 34px;
+    width: max-content;
+    padding: 0 20px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 90px;
+
+    @include tablet {
+      margin-right: 8px;
+      font-size: 14px;
+    }
+    @include mobile {
+      height: 30px;
+      padding: 0 15px;
+      font-size: 14px;
+      margin-right: 4px;
+    }
+  }
+}

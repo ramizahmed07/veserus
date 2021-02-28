@@ -1,0 +1,172 @@
+@import "../../css/styles/colors";
+@import "../../css/styles/mixins.scss";
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  z-index: 9;
+  align-items: center;
+  padding: 39px 80px;
+  justify-content: space-between;
+  @include desktop-sm {
+    padding: 39px 40px;
+  }
+  @include tablet {
+    padding: 39px 26px;
+  }
+  @include mobile {
+    padding: 18px 20px;
+  }
+
+  &__overlay {
+    background-color: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    transition: all 250ms ease-in-out;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    padding-top: 100px;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    &__listItem {
+      text-decoration: none !important;
+
+      margin-bottom: 20px;
+      &__title {
+        font-family: "Sohne 500", sans-serif;
+        font-size: 20px;
+        color: black;
+      }
+    }
+    &--visible {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__logo {
+    position: relative;
+    color: white;
+
+    span {
+      padding-bottom: 3px;
+    }
+    &--initials {
+      display: inline-block;
+      padding: 0px 8px;
+      color: white !important;
+
+      background-color: $primary-color;
+      border-radius: 20px;
+    }
+  }
+  &__links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // width: 500px;
+    color: white;
+    @include mobile {
+      display: none;
+    }
+
+    &__mobileMenu {
+      outline: none;
+      height: 30px;
+      width: 30px;
+      border: none;
+      display: none;
+      background-color: red;
+      border: 0px;
+      align-items: center;
+      z-index: 9;
+      justify-content: center;
+      padding: 0px;
+      background: transparent;
+      cursor: pointer;
+
+      &--active {
+        &::before {
+          transform: translateY(0) rotate(45deg) !important;
+          background-color: black !important;
+        }
+
+        &::after {
+          transform: translateY(0) rotate(-45deg) !important;
+          background-color: black !important;
+        }
+      }
+
+      &::before,
+      &::after {
+        content: "";
+        width: 20px;
+        height: 2px;
+        position: absolute;
+        background: white;
+        transition: all 250ms ease-out;
+        will-change: transform;
+      }
+
+      &::before {
+        transform: translateY(-4px);
+      }
+
+      &::after {
+        transform: translateY(4px);
+      }
+
+      @include mobile {
+        display: flex;
+      }
+    }
+
+    &__link {
+      padding: 8px 0;
+      margin-right: 40px;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+
+      @include desktop-sm {
+        margin-right: 30px;
+      }
+      @include tablet {
+        font-size: 15px;
+        margin-right: 24px;
+      }
+    }
+
+    &__signIn {
+      background-color: $primary-color;
+      width: 124px;
+      border-radius: 90px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 20px;
+      padding-right: 20px;
+      margin-right: 0px;
+      color: white !important;
+    }
+  }
+}
+
+.circle {
+  background: white;
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+}
+
+.inverse {
+  color: black;
+}

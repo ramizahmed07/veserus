@@ -1,0 +1,258 @@
+@import "../../css/styles/colors";
+@import "../../css/styles/mixins.scss";
+
+.contactUs {
+  &__cover {
+    @include cover(#efce94);
+    &__img {
+      @include coverImg;
+      @include desktop-sm {
+        right: 50px;
+        width: 450px;
+      }
+      @include tablet {
+        height: 232px;
+        width: 321px;
+        right: 20px;
+      }
+      @include mobile {
+        width: 174px;
+        height: 126px;
+        right: 0 !important;
+        bottom: 0;
+        left: unset;
+        top: unset;
+        margin: unset;
+      }
+    }
+  }
+  &__content {
+    @include content;
+    top: -180px !important;
+    margin-bottom: -90px;
+    @include tablet {
+      top: -150px !important;
+    }
+    @include mobile {
+      top: -126px !important;
+    }
+    &__title {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 81px;
+      @include tablet {
+        margin-bottom: 64px;
+      }
+      @include mobile {
+        margin-bottom: 40px;
+      }
+      &__content {
+        display: flex;
+        align-items: center;
+        margin-bottom: 16px;
+
+        @include tablet {
+          margin-bottom: 12px;
+        }
+      }
+      p {
+        color: #354458;
+        font-size: 20px;
+        margin-left: 69px !important;
+        @include tablet {
+          font-size: 17px;
+          margin-left: 53px !important;
+        }
+        @include mobile {
+          font-size: 14px;
+          line-height: 20px;
+          width: 205px;
+          margin-left: 30px !important;
+        }
+      }
+      img {
+        @include contentBackArrow;
+      }
+      div {
+        @include contentMainHeading(#121c2c);
+      }
+    }
+
+    &__paragraphs {
+      &__desc {
+        font-size: 20px;
+        line-height: 30px;
+        color: #465364;
+        padding: 60px 0;
+
+        @include tablet {
+          font-size: 16px;
+          line-height: 25px;
+          padding: 26px 0;
+        }
+        @include mobile {
+          font-size: 14px;
+          line-height: 22px;
+          padding: 20px 0;
+        }
+      }
+    }
+    &__form {
+      // background-color: red;
+      display: flex;
+      justify-content: space-between;
+      @include mobile {
+        flex-direction: column;
+      }
+      &__fields {
+        width: calc(95% - 330px);
+        position: relative;
+
+        @include mobile {
+          width: 100%;
+        }
+        &__row {
+          display: flex;
+          position: relative;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 34px;
+          @include mobile {
+            flex-direction: column;
+            margin-bottom: 20px;
+          }
+
+          &--btn {
+            margin: 0;
+          }
+          &__button {
+            background: $primary-color;
+            color: white;
+            height: 56px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            border-radius: 10px;
+            @include mobile {
+              font-size: 14px;
+              height: 48px;
+            }
+          }
+          &__countries {
+            position: absolute;
+            right: 0;
+            bottom: 15px;
+            display: flex;
+            width: 100px;
+            height: 30px;
+            border-radius: 6px;
+            background: #f7f7f7;
+            align-items: center;
+            justify-content: space-evenly;
+
+            &__flag {
+              width: 20px;
+              height: 20px;
+            }
+          }
+          &__list {
+            border-radius: 6px;
+            overflow-y: scroll;
+            background: #f7f7f7;
+            position: absolute;
+            right: 0;
+            z-index: 9;
+            top: 35px;
+            height: 200px;
+            width: 300px;
+            &__item {
+              display: flex;
+              padding: 10px;
+              cursor: pointer;
+              align-items: center;
+              &__flag {
+                width: 20px;
+                height: 20px;
+                margin-right: 5px;
+              }
+
+              &__name {
+                width: 180px;
+                display: block;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+              }
+            }
+          }
+          &__field {
+            width: 100%;
+
+            &--half {
+              width: 49%;
+              &:first-of-type {
+                @include mobile {
+                  margin-bottom: 20px;
+                }
+              }
+              @include mobile {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+
+      &__sidebar {
+        background-color: #f7f7f7;
+        padding: 40px;
+        width: 330px;
+        border-radius: 10px;
+        @include mobile {
+          width: 100%;
+          width: 100vw;
+          margin: 20px -20px 0 -20px;
+          position: relative;
+          top: 10px;
+          border-radius: 0;
+          padding: 20px;
+        }
+        &__title {
+          color: #686e7c;
+          font-family: "Sohne 500", sans-serif;
+          @include mobile {
+            font-size: 14px;
+          }
+        }
+
+        &__desc {
+          margin: 20px 0 40px 0;
+          font-size: 18px;
+          color: #11253e;
+
+          line-height: 25px;
+          font-family: "Inter Regular", sans-serif;
+          @include mobile {
+            line-height: 20px;
+            font-size: 15px;
+            margin: 14px 0 30px 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.MuiInput-underline:after {
+  border-bottom-color: black !important;
+}
+.MuiInput-underline:before {
+  border-bottom-color: #dddee1 !important;
+}
+
+.flag {
+  width: 20px;
+  height: 20px;
+}
