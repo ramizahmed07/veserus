@@ -11,6 +11,25 @@
   align-items: center;
   padding: 39px 80px;
   justify-content: space-between;
+
+  &--apiDocs {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+    border-top: 1px solid transparent;
+
+    border-bottom: 1px solid #eaeef3;
+    .header__logo {
+      span {
+        &:last-of-type {
+          color: $heading-color;
+          font-family: "Sohne 400", sans-serif;
+          font-size: 16px;
+          padding-left: 6px;
+        }
+      }
+    }
+  }
+
   @include desktop-sm {
     padding: 39px 40px;
   }
@@ -54,11 +73,8 @@
 
   &__logo {
     position: relative;
-    color: white;
+    color: inherit;
 
-    span {
-      padding-bottom: 3px;
-    }
     &--initials {
       display: inline-block;
       padding: 0px 8px;
@@ -73,7 +89,6 @@
     justify-content: space-between;
     align-items: center;
     // width: 500px;
-    color: white;
     @include mobile {
       display: none;
     }
@@ -84,7 +99,6 @@
       width: 30px;
       border: none;
       display: none;
-      background-color: red;
       border: 0px;
       align-items: center;
       z-index: 9;
@@ -92,6 +106,13 @@
       padding: 0px;
       background: transparent;
       cursor: pointer;
+
+      &--apiDocs {
+        &::before,
+        &::after {
+          background: #000 !important;
+        }
+      }
 
       &--active {
         &::before {
@@ -131,10 +152,10 @@
 
     &__link {
       padding: 8px 0;
+      color: inherit;
       margin-right: 40px;
       text-align: center;
       text-decoration: none;
-      color: white;
 
       @include desktop-sm {
         margin-right: 30px;

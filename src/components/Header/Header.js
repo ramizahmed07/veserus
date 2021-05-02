@@ -3,34 +3,38 @@ import { Link, useLocation } from "react-router-dom";
 import MenuIcon from "../../assets/images/menu.png";
 import AboutCover from "../../assets/images/aboutCover.png";
 import "./header.scss";
+import PATHS from "../../router/paths";
+import routes from "../../router/routeConfig";
 
 const LINKS = [
   {
     title: "Features",
-    path: "/features",
+    path: PATHS.FEATURES_PAGE,
   },
   {
     title: "Plans",
-    path: "/plans",
+    path: PATHS.PLANS_PAGE,
   },
   {
     title: "About us",
-    path: "/about",
+    path: PATHS.ABOUT_PAGE,
   },
   {
     title: "Help",
-    path: "/help",
+    path: PATHS.HELP_PAGE,
   },
   {
     title: "Sign In",
-    path: "/login",
+    path: PATHS.LOGIN_PAGE,
     signIn: true,
   },
 ];
 
 const Header = () => {
   const [menu, toggleMenu] = useState(false);
-
+  const { pathname } = useLocation();
+  const [color, setColor] = useState("#fff");
+  console.log("pathname", pathname);
   useEffect(() => {
     if (menu) {
       document.body.style.overflow = "hidden";
@@ -41,8 +45,17 @@ const Header = () => {
     }
   }, [menu]);
 
+  useEffect(() => {
+    setColor(routes.find((route) => route.path === pathname)?.headerColor);
+  }, [pathname]);
+
   return (
-    <div className="header">
+    <div
+      style={{ color }}
+      className={`header ${
+        pathname.includes("/contact") && "header--contact"
+      }  ${pathname.includes("/api-docs") && "header--apiDocs"}`}
+    >
       <div className={`header__overlay ${menu && "header__overlay--visible"}`}>
         {LINKS.map(({ title, path, signIn }) => (
           <Link
@@ -58,11 +71,14 @@ const Header = () => {
       </div>
       <h2 className="header__logo">
         <span className="header__logo--initials">ve</span>
-        <span className={`${menu && "inverse"}`}>serus</span>
+        <span className={`${menu && "inverse"}`}>
+          {pathname.includes("/api-docs") ? "API documentation" : "serus"}
+        </span>
       </h2>
       <div className="header__links">
         {LINKS.map(({ title, path, signIn }) => (
           <Link
+            onClick={() => console.log("path", path)}
             key={title}
             to={path}
             className={`header__links__link ${
@@ -79,6 +95,8 @@ const Header = () => {
         onClick={() => toggleMenu((prev) => !prev)}
         className={`header__links__mobileMenu ${
           menu && "header__links__mobileMenu--active"
+        } ${
+          pathname.includes("/api-docs") && "header__links__mobileMenu--apiDocs"
         }`}
       >
         {/* <img src={MenuIcon} alt="menu" /> */}

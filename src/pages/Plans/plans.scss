@@ -48,6 +48,7 @@
       }
       @include mobile {
         margin-bottom: 22px;
+        padding: 0 20px;
       }
       &__content {
         display: flex;
@@ -80,7 +81,7 @@
           width: 256px;
           line-height: 20px;
 
-          margin-left: 30px !important;
+          margin-left: 0px !important;
         }
       }
       img {
@@ -106,8 +107,13 @@
         color: #11243e;
         font-size: 18px;
         font-family: "Sohne 600", sans-serif;
+        font-size: clamp(18px, 1vw, 22px);
+        @include tablet {
+          font-size: clamp(16px, 2vw, 18px);
+        }
         @include mobile {
-          font-size: 13px;
+          font-size: clamp(13px, 4vw, 16px);
+          // font-size: 13px;
         }
       }
       td,
@@ -118,8 +124,14 @@
         font-family: "Circular Std", sans-serif;
         font-size: 17px;
         color: #465364;
+        font-size: clamp(17px, 1vw, 21px);
+
+        @include tablet {
+          font-size: clamp(16px, 1.8vw, 17px);
+        }
         @include mobile {
-          font-size: 14px;
+          // font-size: 14px;
+          font-size: clamp(14px, 4vw, 16px);
         }
       }
       &__colorfulRow {
@@ -139,28 +151,28 @@
       &__title {
         margin-bottom: 20px;
         color: #11243e;
-        font-size: 26px;
+        font-size: clamp(26px, 1.5vw, 35px);
         font-family: "Sohne 600", sans-serif;
         @include tablet {
-          font-size: 20px;
+          @include font-size(22px, 24px);
           margin-bottom: 14px;
         }
         @include mobile {
-          font-size: 20px;
+          font-size: clamp(20px, 6vw, 22px);
+
           margin-bottom: 12px;
         }
       }
       p {
-        font-size: 17px;
-        line-height: 27px;
         color: #293340;
+        font-size: clamp(17px, 1vw, 22px);
+        line-height: clamp(28px, 1.5vw, 35px);
         @include tablet {
-          font-size: 16px;
-          line-height: 25px;
+          font-size: clamp(16px, 1.8vw, 17px);
         }
         @include mobile {
-          font-size: 15px;
-          line-height: 23px;
+          font-size: clamp(15px, 4vw, 16px);
+          line-height: clamp(25px, 5vw, 28px);
         }
       }
     }
@@ -195,13 +207,26 @@
           margin-top: 24px;
           margin-bottom: 32px;
           font-family: "Inter Medium", sans-serif;
-          font-size: 18px;
+          font-size: clamp(18px, 1vw, 22px);
           line-height: 27px;
           color: #293340;
+          @include tablet {
+            font-size: 18px;
+          }
+          @include mobile {
+            font-size: 18px;
+          }
         }
         p {
           margin-bottom: 13px;
-          font-size: 15px;
+          font-size: clamp(15px, 1vw, 18px);
+
+          @include tablet {
+            font-size: 15px;
+          }
+          @include mobile {
+            font-size: 15px;
+          }
           img {
             padding-right: 5px;
           }

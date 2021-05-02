@@ -4,6 +4,7 @@ import AboutCover from "../../assets/images/aboutCover.png";
 import BackArrow from "../../assets/images/backArrow.png";
 import "./aboutUs.scss";
 import Tabs from "../../components/Tabs";
+import { useHistory } from "react-router";
 
 const ABOUT_TABS = [
   { title: "About", path: "/about" },
@@ -13,6 +14,10 @@ const ABOUT_TABS = [
 ];
 
 const AboutUs = () => {
+  const history = useHistory();
+
+  const goBack = () => history.goBack();
+
   return (
     <div className="aboutUs">
       <div className="aboutUs__cover">
@@ -20,12 +25,13 @@ const AboutUs = () => {
       </div>
       <div className="aboutUs__content">
         <div className="aboutUs__content__title">
-          <img src={BackArrow} alt="back" />
+          <img src={BackArrow} alt="back" onClick={goBack} />
           <div>About us</div>
         </div>
         <div className="aboutUs__content__tabs">
           <Tabs tabs={ABOUT_TABS} />
         </div>
+
         <div className="aboutUs__content__paragraphs">
           <div className="aboutUs__content__paragraphs__pr--top">
             Your better-than-a-bank payment processor and direct debit provider.

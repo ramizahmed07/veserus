@@ -2,7 +2,6 @@
 @import "../../css/styles/mixins.scss";
 
 .aboutUs {
-  // @include mobile
   &__cover {
     @include cover(#28373a);
     &__img {
@@ -51,16 +50,6 @@
       }
 
       img {
-        // margin-right: 45px;
-        // object-fit: contain;
-        // @include tablet {
-        //   margin-right: 25px;
-        // }
-        // @include mobile {
-        //   width: 20px;
-        //   height: 16px;
-        //   margin-right: 10px;
-        // }
         @include contentBackArrow;
       }
       div {
@@ -89,7 +78,7 @@
           margin-bottom: 30px;
         }
         &--top {
-          font-size: 20px !important;
+          font-size: clamp(20px, 1vw, 25px);
           line-height: 30px;
           margin-bottom: 60px;
           @include tablet {
@@ -98,35 +87,34 @@
           @include mobile {
             display: none;
           }
-          // @include {}
         }
 
         p {
-          font-size: 17px;
-          line-height: 28px;
+          font-size: clamp(17px, 1vw, 22px);
+
+          line-height: clamp(28px, 1.5vw, 35px);
           margin-bottom: 25px;
           @include tablet {
-            line-height: 22px;
-            font-size: 15px;
+            font-size: clamp(16px, 1.8vw, 17px);
           }
           @include mobile {
-            font-size: 15px;
+            font-size: clamp(15px, 4vw, 16px);
+            line-height: clamp(25px, 5vw, 28px);
           }
         }
 
         div {
           font-family: "Sohne 600", sans-serif;
           color: $heading-color;
-          font-size: 26px;
+          font-size: clamp(26px, 1.5vw, 35px);
           margin-bottom: 25px;
           @include tablet {
             margin-bottom: 20px;
-
-            font-size: 22px;
+            @include font-size(22px, 24px);
           }
           @include mobile {
-            font-size: 20px;
             margin-bottom: 12px;
+            font-size: clamp(20px, 6vw, 22px);
           }
         }
       }
@@ -163,19 +151,19 @@
             margin-bottom: 24px;
           }
           &__title {
-            font-size: 20px;
             font-family: "Sohne 500", sans-serif;
-
+            height: 30px;
             color: #11243e;
             padding-left: 18px;
             padding-top: 1px;
             padding-bottom: 1px;
             border-left: 1px solid black;
+            font-size: clamp(20px, 1.2vw, 25px);
             @include tablet {
-              font-size: 16px;
+              font-size: clamp(17px, 1.8vw, 18px);
             }
             @include mobile {
-              font-size: 15px;
+              font-size: clamp(15px, 4vw, 16px);
               padding-left: 0;
               border: none;
             }
@@ -184,23 +172,21 @@
           &__emails {
             margin-top: 16px;
             margin-left: 18px;
-            font-size: 15px;
             color: #6b7a8a;
+            font-size: clamp(16px, 0.9vw, 18px);
+
             @include tablet {
-              font-size: 14px;
+              font-size: clamp(15px, 1.5vw, 16px);
             }
 
             @include mobile {
-              font-size: 14px;
+              font-size: clamp(14px, 3.5vw, 15px);
               margin-top: 10px;
               margin-left: 0;
             }
 
             p {
               line-height: 24px;
-              @include tablet {
-                // line-height: px;
-              }
             }
           }
         }

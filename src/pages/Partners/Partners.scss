@@ -1,0 +1,124 @@
+@import "../../css/styles/colors";
+@import "../../css/styles/mixins.scss";
+
+.partners {
+  @include header-gap;
+  &__header {
+    @include header-gap-width;
+    justify-content: space-between;
+    align-items: center;
+    &__left {
+      &__title {
+        @include header-gap-title;
+      }
+      p {
+        margin-top: 50px;
+        color: #465364;
+        width: 433px;
+        @media (min-width: 1700px) {
+          width: 535px;
+        }
+        line-height: clamp(30px, 1.7vw, 38px);
+        font-size: clamp(20px, 1.2vw, 25px);
+        @include tablet {
+          margin-top: 28px;
+          font-size: clamp(17px, 2vw, 20px);
+          line-height: clamp(25px, 3vw, 27px);
+        }
+        @include mobile {
+          margin-top: 30px;
+          width: 230px;
+          font-size: clamp(14px, 4.5vw, 17px);
+          line-height: clamp(20px, 6vw, 25px);
+        }
+      }
+    }
+    &__right {
+      position: relative;
+      right: 40px;
+      img {
+        @include tablet {
+          width: 300px;
+          height: 300px;
+          object-fit: contain;
+        }
+        @include mobile {
+          display: none;
+        }
+      }
+    }
+  }
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    &__partner {
+      width: 33%;
+      min-height: 172px;
+      max-height: 200px;
+      // background-color: #eee;
+      padding: 20px;
+      margin-left: -20px;
+      margin-right: -20px;
+      margin-bottom: 65px;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+      @include tablet {
+        margin-bottom: 14px;
+        padding: 16px;
+        margin-left: -16px;
+        margin-right: -16px;
+      }
+      @include mobile {
+        width: 100%;
+        min-height: auto;
+        max-height: auto;
+        padding: 0;
+        margin: 0;
+      }
+
+      &:hover {
+        box-shadow: 0px 25px 35px rgba(0, 0, 0, 0.07);
+        @include tablet {
+          box-shadow: none;
+        }
+        @include mobile {
+          box-shadow: none;
+        }
+      }
+      &__name {
+        color: #11253e;
+        // font-size: 24px;
+        font-size: clamp(24px, 1.4vw, 28px);
+        font-family: "Sohne 600", sans-serif;
+        margin-bottom: 12px;
+        @include tablet {
+          font-size: clamp(18px, 2.1vw, 24px);
+        }
+        @include mobile {
+          font-size: 18px;
+        }
+      }
+
+      &__role {
+        width: clamp(54%, 100vw, 85%);
+        line-height: clamp(25px, 1.5vw, 34px);
+        font-size: clamp(17px, 1vw, 22px);
+        color: #465364;
+        @include desktop-sm {
+          width: 85%;
+        }
+        @include tablet {
+          font-size: clamp(15px, 1.9vw, 17px);
+          width: 167px;
+        }
+        @include mobile {
+          font-size: 16px;
+          min-width: 100%;
+          margin-bottom: 26px;
+        }
+      }
+    }
+  }
+}

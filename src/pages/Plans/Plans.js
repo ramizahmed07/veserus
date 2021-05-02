@@ -1,7 +1,6 @@
 import {
   createMuiTheme,
   Grid,
-  makeStyles,
   Table,
   TableBody,
   TableCell,
@@ -17,12 +16,7 @@ import PlansCover from "../../assets/images/plansCover.png";
 import Check from "../../assets/images/check.png";
 import "./plans.scss";
 import { PLANS_FEATURES } from "./data";
-
-const useStyles = makeStyles({
-  table: {
-    minWidth: 650,
-  },
-});
+import { useHistory } from "react-router";
 
 function createData(pricingTier, takerFee, makerFee) {
   return { pricingTier, takerFee, makerFee };
@@ -53,7 +47,10 @@ const theme = createMuiTheme({
 });
 
 const Plans = () => {
-  const classes = useStyles();
+  const history = useHistory();
+
+  const goBack = () => history.goBack();
+
   return (
     <ThemeProvider theme={theme}>
       <div className="plans">
@@ -63,7 +60,7 @@ const Plans = () => {
         <div className="plans__content">
           <div className="plans__content__title">
             <div className="plans__content__title__content">
-              <img src={BackArrow} alt="back" />
+              <img src={BackArrow} alt="back" onClick={goBack} />
               <div>Pricing and fees</div>
             </div>
             <p>

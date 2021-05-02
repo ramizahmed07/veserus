@@ -1,0 +1,109 @@
+@import "../../css/styles/mixins.scss";
+@import "../../css/styles/colors";
+
+.resources {
+  margin-bottom: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include tablet {
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+  @include mobile {
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  &__card {
+    width: 48.5%;
+    padding: 30px;
+    box-shadow: 0px 10px 40px rgba(17, 36, 62, 0.15);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    @include tablet {
+      width: 100% !important;
+      padding: 20px;
+      &:first-of-type {
+        margin-bottom: 10px;
+      }
+    }
+    @include mobile {
+      height: 317px;
+      width: 100% !important;
+      padding: 20px 20px 0px 20px;
+      &:first-of-type {
+        margin-bottom: 10px;
+      }
+    }
+    &__img {
+      position: absolute;
+      right: 0px;
+      bottom: 0;
+      width: 160px;
+      height: 140px;
+      object-fit: contain;
+      @include tablet {
+        width: 133px;
+        height: 117px;
+        right: 34px;
+      }
+      @include mobile {
+        width: 234px;
+        height: 205px;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+    }
+
+    &__title {
+      color: #fff;
+      font-size: clamp(24px, 1.5vw, 27px);
+      z-index: 9;
+      position: relative;
+      display: flex;
+      align-items: center;
+      font-family: "Sohne 600", sans-serif;
+      margin-bottom: 14px;
+      img {
+        margin-left: 16px;
+        @include tablet {
+          width: 18px;
+        }
+        @include mobile {
+          width: 18px;
+        }
+      }
+      @include tablet {
+        font-size: clamp(18px, 2vw, 20px);
+      }
+      @include mobile {
+        font-size: clamp(17px, 4.8vw, 20px);
+        margin-bottom: 13px;
+      }
+    }
+    p {
+      font-size: clamp(17px, 1vw, 20px);
+      line-height: clamp(25px, 1.3vw, 27px);
+      width: 300px;
+      z-index: 9;
+      position: relative;
+      color: white;
+      @media (min-width: 1700px) {
+        width: 350px;
+      }
+      @include tablet {
+        font-size: 16px;
+        line-height: 24px;
+        width: 408px;
+      }
+      @include mobile {
+        font-size: clamp(15px, 4.5vw, 18px);
+        line-height: clamp(21px, 6vw, 25px);
+        width: 100%;
+      }
+    }
+  }
+}

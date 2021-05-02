@@ -1,0 +1,152 @@
+@import "../../css/styles/mixins.scss";
+@import "../../css/styles/colors";
+
+.team {
+  margin-top: 170px !important;
+  margin: auto;
+  @include desktop-lg {
+    width: 1200px;
+    padding: 0;
+  }
+  @include desktop-sm {
+    width: 1000px;
+    padding: 0;
+  }
+
+  width: 100%;
+  padding: 0 26px;
+
+  @include tablet {
+    margin-top: 215px !important;
+  }
+  @include mobile {
+    padding: 0;
+    margin-top: 90px !important;
+  }
+
+  &__header {
+    margin-bottom: 100px;
+    display: flex;
+    @include tablet {
+      margin-bottom: 40px;
+    }
+    @include mobile {
+      flex-direction: column;
+      margin-bottom: 30px;
+      padding: 0 20px;
+    }
+    &__title {
+      display: flex;
+      align-items: center;
+      height: max-content;
+
+      img {
+        cursor: pointer;
+        margin-right: 41px;
+        @include tablet {
+          margin-right: 20px;
+        }
+        @include mobile {
+          width: 20px;
+          margin-right: 10px;
+          width: 16px;
+        }
+      }
+      div {
+        font-family: "Sohne 600", sans-serif;
+        // font-size: 46px;
+        color: #11253e;
+        font-size: clamp(46px, 2.8vw, 50px);
+        @include tablet {
+          font-size: clamp(42px, 4.8vw, 46px);
+
+          // font-size: 42px;
+        }
+        @include mobile {
+          font-size: clamp(28px, 8vw, 32px);
+        }
+      }
+    }
+    p {
+      color: #465364;
+      width: 540px;
+      margin-left: 129px;
+      line-height: clamp(30px, 1.7vw, 38px);
+      font-size: clamp(20px, 1.2vw, 25px);
+
+      @include tablet {
+        font-size: clamp(17px, 2vw, 20px);
+        line-height: clamp(25px, 3vw, 27px);
+        margin-left: 70px;
+        width: 373px;
+        position: relative;
+        top: 11px;
+      }
+      @include mobile {
+        font-size: clamp(14px, 4.5vw, 17px);
+        line-height: clamp(20px, 6vw, 25px);
+        margin-left: 0;
+        margin-top: 30px;
+        width: clamp(206px, 100vw, 250px);
+      }
+    }
+  }
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    &__member {
+      // background-color: #eee;
+      margin-bottom: 90px;
+      display: inline-block;
+      width: 32%;
+
+      @include tablet {
+        width: 48.5%;
+        margin-bottom: 40px;
+      }
+
+      @include mobile {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+
+      img {
+        width: 100%;
+        // object-fit: cover;
+        height: 460px;
+
+        @include mobile {
+          height: auto;
+        }
+      }
+      &__rank {
+        margin-top: 26px;
+        font-size: 13px;
+        color: #465364;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+        @include tablet {
+          margin-top: 20px;
+          margin-bottom: 10px;
+        }
+        @include mobile {
+          padding-left: 20px;
+          margin-top: 16px;
+          margin-bottom: 8px;
+        }
+      }
+      &__name {
+        color: #11253e;
+        font-size: 24px;
+        font-family: "Sohne 600";
+        @include mobile {
+          padding-left: 20px;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}

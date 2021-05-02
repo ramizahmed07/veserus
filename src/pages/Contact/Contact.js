@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import DropdownArrow from "../../assets/images/dropdown-arrow.png";
-// import getUnicodeFlagIcon from "country-flag-icons/unicode";
-// import Flags from "country-flag-icons/react/3x2";
 import * as images from "round-flags";
 
 import ContactCover from "../../assets/images/contactCover.png";
@@ -9,6 +7,7 @@ import BackArrowDark from "../../assets/images/backArrowDark.png";
 import "./contact.scss";
 import { createMuiTheme, TextField, ThemeProvider } from "@material-ui/core";
 import { countries } from "../../constants";
+import { useHistory } from "react-router";
 
 const customTheme = createMuiTheme({
   overrides: {
@@ -51,6 +50,7 @@ const Contact = () => {
     dial_code: "+1",
     code: "US",
   });
+  const history = useHistory();
   const [mQuery, setMQuery] = useState(window.innerWidth <= 767 ? true : false);
   const [dropdownVisible, setDropdownVisible] = useState(false);
 
@@ -68,6 +68,8 @@ const Contact = () => {
     setDropdownVisible((prev) => !prev);
   };
 
+  const goBack = () => history.goBack();
+
   return (
     <ThemeProvider theme={customTheme}>
       <div onClick={() => setDropdownVisible(false)} className="contactUs">
@@ -81,7 +83,7 @@ const Contact = () => {
         <div className="contactUs__content">
           <div className="contactUs__content__title">
             <div className="contactUs__content__title__content">
-              <img src={BackArrowDark} alt="back" />
+              <img src={BackArrowDark} alt="back" onClick={goBack} />
               <div>Contact us</div>
             </div>
             <p>If you have any questions, please contact us.</p>

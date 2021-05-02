@@ -1,0 +1,174 @@
+@import "../../../css/styles/colors";
+@import "../../../css/styles/mixins.scss";
+
+.sampleIntegrations {
+  pre {
+    background-color: #0b0a15 !important;
+    padding: 60px 0 !important;
+    margin: 0 !important;
+    height: 100% !important;
+    display: flex;
+    align-items: center;
+    border-radius: 0 !important;
+    position: relative;
+    code {
+      .linenumber {
+        color: #a2a7b2 !important;
+        &::after {
+          content: "";
+          display: block;
+          top: 0;
+          bottom: 0;
+          width: 1px;
+          position: absolute;
+          left: 65px;
+          background-color: #363448;
+        }
+      }
+    }
+  }
+
+  &__steps {
+    border-left: 1px solid #eaeef3;
+    @include tablet {
+      border: none;
+    }
+    @include mobile {
+      border: none;
+    }
+    &__step {
+      // height: 541px;
+      display: flex;
+      @include tablet {
+        flex-direction: column;
+      }
+      @include mobile {
+        flex-direction: column;
+      }
+
+      &__text {
+        border-bottom: 1px solid #eaeef3;
+        padding: 40px 45px 20px 45px;
+        // padding: 61px 47px 61px 45px;
+        @include tablet {
+          padding: 20px 20px;
+          border: none;
+        }
+        @include mobile {
+          padding: 20px 20px;
+
+          border: none;
+        }
+        a {
+          text-decoration: none;
+          font-family: "Inter Regular", sans-serif;
+          font-size: 15px;
+          display: inline-block;
+          @include desktop-sm {
+            margin-bottom: 40px;
+          }
+          @include desktop-lg {
+            margin-bottom: 40px;
+          }
+        }
+        &__mainTitle {
+          // margin-top: 9px;
+          font-family: "Inter Bold", sans-serif;
+          // font-size: 36px;
+          font-size: clamp(36px, 2vw, 40px);
+          margin-bottom: 27px;
+          color: #171a1f;
+          @include tablet {
+            margin-bottom: 20px;
+            font-size: clamp(30px, 3.5vw, 36px);
+          }
+          @include mobile {
+            font-size: clamp(18px, 5.3vw, 22px);
+
+            margin-bottom: 10px;
+          }
+        }
+        &__subTitle {
+          font-size: clamp(20px, 1vw, 25px);
+          color: #50545d;
+          margin-bottom: 50px;
+          line-height: 30px;
+          font-family: "Inter Regular", sans-serif;
+          @include tablet {
+            margin-bottom: 40px;
+            font-size: clamp(16px, 1.8vw, 18px);
+          }
+          @include mobile {
+            font-size: clamp(14px, 4vw, 16px);
+            line-height: 23px;
+            margin-bottom: 30px;
+          }
+        }
+        &__title {
+          font-size: clamp(24px, 1.5vw, 28px);
+          margin-bottom: 21px;
+          color: #171a1f;
+          line-height: 35px;
+          font-family: "Inter SemiBold", sans-serif;
+          @include tablet {
+            font-size: 24px;
+          }
+          @include mobile {
+            font-size: clamp(16px, 4.5vw, 18px);
+
+            margin-bottom: 12px;
+          }
+        }
+        &__pr {
+          font-family: "Inter Regular", sans-serif;
+          color: #393d44;
+          p {
+            font-size: clamp(16px, 0.9vw, 18px);
+            line-height: clamp(26px, 1.5vw, 33px);
+            margin-bottom: 25px;
+            @include tablet {
+              font-size: clamp(15px, 1.5vw, 16px);
+              margin-bottom: 20px;
+              line-height: 23px;
+            }
+            @include mobile {
+              font-size: clamp(14px, 3.5vw, 15px);
+              margin-bottom: 20px;
+              line-height: 23px;
+            }
+          }
+        }
+      }
+      &__code {
+        border-bottom: 1px solid #363448;
+        @include tablet {
+          border: none;
+        }
+        @include mobile {
+          border: none;
+        }
+      }
+      &__text,
+      &__code {
+        @include tablet {
+          width: 100%;
+        }
+        @include mobile {
+          width: 100%;
+        }
+        width: 50%;
+      }
+    }
+  }
+}
+
+.no-border {
+  .sampleIntegrations__steps__step__text,
+  .sampleIntegrations__steps__step__code {
+    border: none !important;
+  }
+}
+
+.no-margin {
+  margin: 0 !important;
+}

@@ -1,0 +1,197 @@
+@import "../../css/styles/colors";
+@import "../../css/styles/mixins.scss";
+
+.professionals {
+  @include header-gap;
+  &__header {
+    @include header-gap-width;
+    justify-content: space-between;
+    align-items: center;
+    @include mobile {
+      margin-bottom: 30px;
+    }
+    &__left {
+      &__title {
+        @include header-gap-title;
+      }
+      p {
+        margin-top: 50px;
+        color: #465364;
+        width: 433px;
+        line-height: clamp(30px, 1.7vw, 38px);
+        font-size: clamp(20px, 1.2vw, 25px);
+        @media (min-width: 1700px) {
+          width: 535px;
+        }
+        @include tablet {
+          margin-top: 28px;
+          font-size: clamp(17px, 2vw, 20px);
+          line-height: clamp(25px, 3vw, 27px);
+        }
+        @include mobile {
+          margin-top: 30px;
+          width: 247px;
+          font-size: clamp(14px, 4.5vw, 17px);
+          line-height: clamp(20px, 6vw, 25px);
+        }
+      }
+    }
+    &__right {
+      position: relative;
+      right: 40px;
+      img {
+        @include tablet {
+          width: 300px;
+          height: 300px;
+          object-fit: contain;
+        }
+        @include mobile {
+          display: none;
+        }
+      }
+    }
+  }
+  &__message {
+    background-color: #eff3fe;
+    padding: 25px 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    margin-bottom: 60px;
+    @include tablet {
+      margin-bottom: 40px;
+      padding: 20px;
+    }
+    @include mobile {
+      margin-bottom: 30px;
+      padding: 16px;
+    }
+
+    &__icon {
+      @include mobile {
+        display: none !important;
+      }
+    }
+
+    div {
+      min-width: 40px;
+      height: 40px;
+      background-color: #564fe6;
+      border-radius: 20px;
+      margin-right: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        object-fit: contain;
+      }
+    }
+    span {
+      font-size: 14px;
+      line-height: 20px;
+      @include mobile {
+        line-height: clamp(20px, 5.3vw, 23px);
+        font-size: clamp(14px, 3.8vw, 16px);
+      }
+    }
+  }
+  &__content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    &__professional {
+      width: 33%;
+      height: 100%;
+      padding: 20px;
+      margin-left: -20px;
+      margin-right: -20px;
+      margin-bottom: 65px;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      @include tablet {
+        margin-bottom: 14px;
+        padding: 16px;
+        width: 49%;
+        margin-left: -16px;
+        margin-right: -16px;
+      }
+      @include mobile {
+        width: 100%;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        flex-direction: column;
+      }
+      &:hover {
+        box-shadow: 0px 25px 35px rgba(0, 0, 0, 0.07);
+        @include tablet {
+          box-shadow: none;
+        }
+        @include mobile {
+          box-shadow: none;
+        }
+      }
+      &__logo {
+        min-width: 40px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        border-radius: 100%;
+        height: max-content;
+        -webkit-box-shadow: 1px 3px 5px 0px rgba(102, 102, 102, 0.29);
+        -moz-box-shadow: 1px 3px 5px 0px rgba(102, 102, 102, 0.29);
+        box-shadow: 1px 3px 5px 0px rgba(102, 102, 102, 0.29);
+        img {
+          object-fit: contain;
+        }
+        @include mobile {
+          margin-bottom: 10px;
+          width: max-content;
+        }
+      }
+      &__info {
+        margin-left: 14px;
+        width: 100%;
+        @include mobile {
+          margin-left: 0;
+        }
+        &__title {
+          color: #11253e;
+          font-family: "Sohne 600", sans-serif;
+          font-size: clamp(24px, 1.4vw, 28px);
+          margin-bottom: 12px;
+          @include tablet {
+            font-size: clamp(18px, 2.1vw, 20px);
+            margin-bottom: 10px;
+          }
+          @include mobile {
+            margin-bottom: 10px;
+            font-size: clamp(18px, 5vw, 20px);
+          }
+        }
+        p {
+          line-height: clamp(26px, 1.5vw, 28px);
+          color: #465364;
+          width: 254px;
+          font-size: clamp(18px, 1.1vw, 20px);
+          @include desktop-sm {
+            width: 100%;
+          }
+          @include tablet {
+            line-height: clamp(25px, 3vw, 27px);
+            font-size: clamp(16px, 2vw, 18px);
+          }
+          @include mobile {
+            min-width: 100%;
+            margin-bottom: 26px;
+            font-size: clamp(15px, 4.4vw, 16px);
+          }
+        }
+      }
+    }
+  }
+}

@@ -17,15 +17,17 @@
     justify-content: center;
     align-items: center;
     border-radius: 90px;
+    font-size: clamp(16px, 1vw, 21px);
 
     @include tablet {
       margin-right: 8px;
-      font-size: 14px;
+      font-size: clamp(15px, 1.8vw, 16px);
     }
     @include mobile {
       height: 30px;
-      padding: 0 15px;
-      font-size: 14px;
+      padding: 0 12px;
+      font-size: clamp(14px, 4vw, 15px);
+      
       margin-right: 4px;
     }
   }

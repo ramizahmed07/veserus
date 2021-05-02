@@ -52,14 +52,17 @@ $desktop-width-md: 1400px;
 }
 
 @mixin content {
-  width: 65%;
+  width: 1020px;
   margin: auto;
   position: relative;
-  @include desktop-sm {
-    width: 75%;
+
+  @media (min-width: 1025px) and (max-width: 1170px) {
+    width: 900px;
   }
   @include tablet {
-    width: 93.5%;
+    // width: 93.5%;
+    width: 100%;
+    padding: 0 25px;
   }
   @include mobile {
     width: 100%;
@@ -70,6 +73,7 @@ $desktop-width-md: 1400px;
 @mixin contentBackArrow {
   margin-right: 41px;
   object-fit: contain;
+  cursor: pointer;
   @include tablet {
     margin-right: 25px;
   }
@@ -90,4 +94,126 @@ $desktop-width-md: 1400px;
   @include mobile {
     font-size: 28px;
   }
+}
+
+@mixin rightBorder {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 1px;
+  background: black;
+  position: absolute;
+  right: -1px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+@mixin header-gap {
+  margin-top: 170px !important;
+  margin: auto;
+  @include desktop-lg {
+    width: 1200px;
+    padding: 0;
+    margin: auto;
+  }
+  @include desktop-sm {
+    width: 900px;
+    padding: 0;
+    margin: auto;
+  }
+  @include tablet {
+    margin-top: 120px !important;
+    width: 100%;
+    padding: 0 26px;
+  }
+  @include mobile {
+    width: 100%;
+    padding: 0 20px;
+    margin-top: 90px !important;
+  }
+}
+
+@mixin header-gap-width {
+  margin-bottom: 50px;
+  display: flex;
+  @include tablet {
+    margin-bottom: 0px;
+  }
+  @include mobile {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 50px;
+
+    // padding: 0 20px;
+  }
+}
+
+@mixin header-gap-title {
+  display: flex;
+  align-items: center;
+  height: max-content;
+
+  img {
+    margin-right: 41px;
+    @include tablet {
+      margin-right: 20px;
+    }
+    @include mobile {
+      width: 20px;
+      margin-right: 10px;
+
+      width: 16px;
+    }
+  }
+  div {
+    font-family: "Sohne 600", sans-serif;
+    color: #11253e;
+    font-size: clamp(46px, 2.8vw, 50px);
+    @include tablet {
+      font-size: clamp(42px, 4.8vw, 46px);
+    }
+    @include mobile {
+      font-size: clamp(28px, 8vw, 32px);
+    }
+  }
+}
+
+$font-lock-min: 400px !default;
+$font-lock-max: 1000px !default;
+
+//  font-size
+@mixin font-size(
+  $min,
+  // font-size
+  $max: null,
+  // optional maximum font size
+  $lock-min: $font-lock-min,
+  // optional minimum viewport width
+  $lock-max: $font-lock-max // optional maximum viewport width
+) {
+  & {
+    font-size: $min;
+  }
+  @if $max {
+    @media (min-width: $lock-min) {
+      & {
+        font-size: calc(
+          #{$min} + #{num($max) - num($min)} * (100vw - #{$lock-min}) / #{num(
+              $lock-max
+            ) - num($lock-min)}
+        );
+      }
+    }
+    @media (min-width: $lock-max) {
+      & {
+        font-size: $max;
+      }
+    }
+  }
+}
+
+//  strip units helper function
+@function num($input) {
+  @return $input/($input * 0 + 1);
 }
