@@ -3,6 +3,7 @@ import ApiDocsHome from "../components/ApiDocsContainer/ApiDocsHome";
 import AboutUs from "../pages/AboutUs";
 import ApiDocs from "../pages/ApiDocs";
 import Contact from "../pages/Contact";
+import Features from "../pages/Features";
 import Partners from "../pages/Partners";
 import Plans from "../pages/Plans";
 import Professionals from "../pages/Professionals";
@@ -148,6 +149,12 @@ const routeConfig = [
     path: `${PATHS.PROFESSIONALS}`,
     component: Professionals,
     key: "Professionals",
+    headerColor: "#465364",
+  },
+  {
+    path: `${PATHS.FEATURES_PAGE}`,
+    component: Features,
+    key: "Features",
     headerColor: "#465364",
   },
   {

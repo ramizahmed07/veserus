@@ -34,7 +34,6 @@ const Header = () => {
   const [menu, toggleMenu] = useState(false);
   const { pathname } = useLocation();
   const [color, setColor] = useState("#fff");
-  console.log("pathname", pathname);
   useEffect(() => {
     if (menu) {
       document.body.style.overflow = "hidden";
@@ -78,7 +77,6 @@ const Header = () => {
       <div className="header__links">
         {LINKS.map(({ title, path, signIn }) => (
           <Link
-            onClick={() => console.log("path", path)}
             key={title}
             to={path}
             className={`header__links__link ${

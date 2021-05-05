@@ -4,7 +4,7 @@
 .notFound {
   // @include mobile
   &__cover {
-    @include cover(rgb(167, 167, 167));
+    @include cover(#0b0a15);
     &__img {
       @include coverImg;
       @include desktop-sm {

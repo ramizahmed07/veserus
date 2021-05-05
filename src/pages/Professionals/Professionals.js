@@ -66,7 +66,7 @@ const Professionals = () => {
       <div className="professionals__content">
         {PROFESSIONALS.map(({ name, desc, id, logo }) => (
           <div className="professionals__content__professional" key={id}>
-            <div class="professionals__content__professional__logo">
+            <div className="professionals__content__professional__logo">
               <img src={logo} alt="logo" />
             </div>
             <div className="professionals__content__professional__info">

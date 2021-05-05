@@ -25,12 +25,22 @@ const COMPANY_LINKS = [
   { title: "Mobile apps", path: "/mobile-apps" },
 ];
 
+const checkIfFooterPages = (pathname) => {
+  const paths = ["/professionals", "/team", "/partners", "/brand-assets"];
+  return paths.includes(pathname);
+};
+
 const Footer = () => {
   const { pathname } = useLocation();
   if (pathname.includes("/api-docs")) return null;
+
   return (
     <div className="footer">
-      <div className="footer__content">
+      <div
+        className={`footer__content ${
+          checkIfFooterPages(pathname) ? "footer__contentSM" : ""
+        }`}
+      >
         <div className="footer__leftCol">
           {FOOTER_LEFT_LINKS.map(({ title, path }) => (
             <Link to={path} key={title} className="footer__leftCol__link">

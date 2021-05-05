@@ -1,0 +1,165 @@
+@import "../../css/styles/colors";
+@import "../../css/styles/mixins.scss";
+
+.features {
+  overflow-x: hidden;
+  // margin-top: 148px;
+  @include tablet {
+    // margin-top: 100px;
+  }
+  @include mobile {
+    // margin-top: 100px;
+  }
+  &__cover {
+    height: 500px;
+    position: relative;
+    @include tablet {
+      height: 360px;
+    }
+    @include mobile {
+      height: 200px;
+    }
+    background-color: linear-gradient(
+      180deg,
+      #ffffff 65.8%,
+      #fbfbfc 100%
+    ) !important;
+    mix-blend-mode: multiply !important;
+    display: flex;
+    justify-content: center;
+    img {
+      width: 1108px;
+      margin-bottom: 40px;
+
+      position: relative;
+      top: 125px;
+      height: 623px;
+      object-fit: contain;
+      @include tablet {
+        width: 716px;
+        height: 403px;
+        top: 140px;
+      }
+      @include mobile {
+        width: 320px;
+        height: 180px;
+        top: 100px;
+      }
+    }
+  }
+  &__titles {
+    margin-top: 293px;
+
+    &__mainTitle {
+      font-family: "Sohne 600", sans-serif;
+      font-size: 46px;
+      color: #11253e;
+      text-align: center;
+      margin-bottom: 26px;
+    }
+    &__subTitle {
+      color: #465364;
+      font-size: 26px;
+      text-align: center;
+      line-height: 40px;
+      margin: 0 auto;
+      width: 586px;
+    }
+    &__createAccountBtn {
+      background-color: #564fe6;
+      width: 254px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 90px;
+      font-size: 17px;
+      color: #fff;
+      margin: 0 auto;
+      margin-top: 46px;
+    }
+  }
+  &__content {
+    @media (min-width: 1601px) {
+      width: 1400px;
+      margin: 0 auto;
+    }
+    @media (max-width: 1600px) {
+      padding: 0 150px;
+    }
+
+    &__steps {
+      position: relative;
+
+      &__title {
+        padding-top: 60px;
+        font-family: "Sohne 600", sans-serif;
+        font-size: 42px;
+        color: #11253e;
+        width: 327px;
+        margin-bottom: 101px;
+        span {
+          color: #564fe6;
+        }
+      }
+      &__step {
+        width: 357px;
+        img {
+          margin-bottom: 22px;
+        }
+        &__title {
+          margin-bottom: 15px;
+          font-size: 20px;
+          font-family: "Sohne 500", sans-serif;
+          color: #11243e;
+        }
+        &__desc {
+          font-size: 16px;
+          line-height: 27px;
+          color: #465464;
+          width: 357px;
+        }
+      }
+
+      &__footer {
+        position: relative;
+        width: 100vw;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #f8f1f8;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        margin-top: 97px;
+        @media (min-width: 1601px) {
+          display: flex;
+          justify-content: center;
+        }
+        @media (max-width: 1600px) {
+          padding-left: 150px;
+        }
+        @include desktop-sm {
+          padding-top: 30px;
+          padding-bottom: 30px;
+          margin-top: 50px;
+        }
+
+        .features__content__steps__step {
+          @media (min-width: 1601px) {
+            width: 1400px;
+          }
+        }
+      }
+      &__cover {
+        position: absolute;
+        right: 0;
+        top: -50px;
+        @media (max-width: 1600px) {
+          right: -150px;
+        }
+        @include desktop-sm {
+          width: 780px;
+        }
+      }
+    }
+  }
+}
