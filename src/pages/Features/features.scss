@@ -161,5 +161,35 @@
         }
       }
     }
+    &__transfers {
+      margin: 220px 0;
+      display: flex;
+      align-items: center;
+      &__title {
+        padding-top: 60px;
+        font-family: "Sohne 600", sans-serif;
+        font-size: 42px;
+        color: #11253e;
+        margin-bottom: 26px;
+        span {
+          color: #564fe6;
+        }
+      }
+      &__desc {
+        font-size: 16px;
+        line-height: 27px;
+        color: #465464;
+        width: 379px;
+      }
+      &__orderImg {
+        position: relative;
+        left: 120px;
+        img {
+          object-fit: contain;
+          width: 575px;
+          height: 634px;
+        }
+      }
+    }
   }
 }

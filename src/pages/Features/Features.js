@@ -4,6 +4,7 @@ import CoverImage from "../../assets/images/features-cover.png";
 import SquareBox from "../../assets/images/square-box.png";
 import HalfSteps from "../../assets/images/half-steps.png";
 import SearchIcon from "../../assets/images/search-icon.png";
+import OrderImage from "../../assets/images/order.png";
 import "./features.scss";
 
 const Features = () => {
@@ -64,31 +65,21 @@ const Features = () => {
             alt="step-cover"
           />
         </div>
-        <div>
-          Veserus is the best choice not only for users but also for businesses.
-          Thanks to its innovative design, invoicing processes are much easier
-          and faster than ever before. All you need to do is look through
-          “latest transactions” menu. Veserus is the best choice not only for
-          users but also for businesses. Thanks to its innovative design,
-          invoicing processes are much easier and faster than ever before. All
-          you need to do is look through “latest transactions” menu. Veserus is
-          the best choice not only for users but also for businesses. Thanks to
-          its innovative design, invoicing processes are much easier and faster
-          than ever before. All you need to do is look through “latest
-          transactions” menu. Veserus is the best choice not only for users but
-          also for businesses. Thanks to its innovative design, invoicing
-          processes are much easier and faster than ever before. All you need to
-          do is look through “latest transactions” menu. Veserus is the best
-          choice not only for users but also for businesses. Thanks to its
-          innovative design, invoicing processes are much easier and faster than
-          ever before. All you need to do is look through “latest transactions”
-          menu. Veserus is the best choice not only for users but also for
-          businesses. Thanks to its innovative design, invoicing processes are
-          much easier and faster than ever before. All you need to do is look
-          through “latest transactions” menu. Veserus is the best choice not
-          only for users but also for businesses. Thanks to its innovative
-          design, invoicing processes are much easier and faster than ever
-          before. All you need to do is look through “latest transactions” menu.
+        <div className="features__content__transfers">
+          <div>
+            <div className="features__content__transfers__title">
+              Instant <span>Transfers.</span>
+            </div>
+            <div className="features__content__transfers__desc">
+              Instant transfers allow you to send money from Veserus to a wallet
+              address, typically within minute. Instant transfers can be made 24
+              hours a day, 365 days a year regardless of holiday or weekend
+              schedules.
+            </div>
+          </div>
+          <div className="features__content__transfers__orderImg">
+            <img src={OrderImage} alt="order" />
+          </div>
         </div>
       </div>
     </div>
