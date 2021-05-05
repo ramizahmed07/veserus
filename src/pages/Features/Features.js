@@ -5,6 +5,7 @@ import SquareBox from "../../assets/images/square-box.png";
 import HalfSteps from "../../assets/images/half-steps.png";
 import SearchIcon from "../../assets/images/search-icon.png";
 import OrderImage from "../../assets/images/order.png";
+import VeserusUI from "../../assets/images/features-veserus-ui.png";
 import "./features.scss";
 
 const Features = () => {
@@ -80,6 +81,23 @@ const Features = () => {
           <div className="features__content__transfers__orderImg">
             <img src={OrderImage} alt="order" />
           </div>
+        </div>
+        <div className="features__content__blockchain">
+          <div className="features__content__blockchain__bg">
+            <div>
+              <div className="features__content__blockchain__bg__title">
+                Embrace what the <span>blockchain world brings</span>.
+              </div>
+              <div className="features__content__blockchain__bg__desc">
+                We are proud to be able to integrate with all applications in
+                the blockchain world. We are at the center of this revolution in
+                digital payments! Thanks to the Veserus Widget feature, we bring
+                breath new life into the cryptocurrency world and solve big
+                problems with simple ideas.
+              </div>
+            </div>
+          </div>
+          <img src={VeserusUI} alt="blockchain" />
         </div>
       </div>
     </div>

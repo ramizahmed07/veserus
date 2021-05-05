@@ -162,7 +162,7 @@
       }
     }
     &__transfers {
-      margin: 220px 0;
+      margin-top: 220px;
       display: flex;
       align-items: center;
       &__title {
@@ -189,6 +189,50 @@
           width: 575px;
           height: 634px;
         }
+      }
+    }
+    &__blockchain {
+      margin-top: 220px;
+      margin-bottom: 220px;
+      padding: 135px 0;
+      display: flex;
+      align-items: center;
+      position: relative;
+      width: 100vw;
+
+      &__bg {
+        background-color: #13202c;
+        // height: 571px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 110px 0;
+        width: 88vw;
+        margin-left: auto;
+
+        &__title {
+          font-family: "Sohne 600", sans-serif;
+          font-size: 42px;
+          color: white;
+          margin-bottom: 26px;
+          width: 279px;
+          span {
+            color: #fbeea8;
+          }
+        }
+        &__desc {
+          font-size: 18px;
+          line-height: 30px;
+          color: #f4f8fc;
+          width: 387px;
+        }
+      }
+      img {
+        width: 600px;
+        height: 841px;
+        position: absolute;
+        left: -37px;
+        top: 56px;
       }
     }
   }
