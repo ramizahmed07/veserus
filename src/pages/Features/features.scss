@@ -3,13 +3,7 @@
 
 .features {
   overflow-x: hidden;
-  // margin-top: 148px;
-  @include tablet {
-    // margin-top: 100px;
-  }
-  @include mobile {
-    // margin-top: 100px;
-  }
+
   &__cover {
     height: 500px;
     position: relative;
@@ -165,6 +159,7 @@
       margin-top: 220px;
       display: flex;
       align-items: center;
+      justify-content: space-between;
       &__title {
         padding-top: 60px;
         font-family: "Sohne 600", sans-serif;
@@ -183,7 +178,7 @@
       }
       &__orderImg {
         position: relative;
-        left: 120px;
+        right: 100px;
         img {
           object-fit: contain;
           width: 575px;
@@ -233,6 +228,144 @@
         position: absolute;
         left: -37px;
         top: 56px;
+      }
+    }
+    &__platform {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 280px;
+      &__title {
+        font-family: "Sohne 600", sans-serif;
+        font-size: 42px;
+        color: #11253e;
+        margin-bottom: 26px;
+        text-align: center;
+        span {
+          color: #564fe6;
+        }
+      }
+      &__desc {
+        line-height: 30px;
+        font-size: 18px;
+        text-align: center;
+        margin: 0 auto;
+        color: #465464;
+        margin-bottom: 102px;
+        width: 623px;
+      }
+      img {
+        width: calc(100% + 55px);
+        height: calc(585px + 55px);
+      }
+    }
+    &__bank {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 219px;
+      &__left {
+        max-width: 414px;
+        position: relative;
+        top: 35px;
+        &__tag {
+          background-color: #564fe6;
+          width: 98px;
+          height: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 90px;
+          color: white;
+          font-size: 11px;
+          margin-bottom: 19px;
+        }
+        &__title {
+          font-family: "Sohne 600", sans-serif;
+          font-size: 42px;
+          color: #11253e;
+          margin-bottom: 26px;
+          span {
+            color: #564fe6;
+          }
+        }
+        &__desc {
+          line-height: 30px;
+          font-size: 18px;
+          color: #465464;
+        }
+      }
+      &__right {
+        img {
+          width: 471px;
+          height: 428px;
+        }
+      }
+    }
+    &__contact {
+      height: 414px;
+      background-color: #5f2bd6;
+
+      position: relative;
+      width: 100vw;
+      left: 50%;
+      transform: translateX(-50%);
+
+      &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        @media (min-width: 1601px) {
+          width: 1400px;
+          margin: 0 auto;
+        }
+        @media (max-width: 1600px) {
+          margin-left: 150px;
+          margin-right: 150px;
+        }
+      }
+      &__left {
+        &__title {
+          font-family: "Sohne 600", sans-serif;
+          font-size: 42px;
+          color: #fff;
+          margin-bottom: 19px;
+        }
+        &__desc {
+          width: 304px;
+          color: #d2ccee;
+          font-size: 18px;
+          line-height: 30px;
+        }
+      }
+      &__right {
+        display: flex;
+
+        input {
+          width: 295px;
+          padding: 15px 18px;
+          background-color: white;
+          border: none;
+          border-radius: 90px;
+          outline: none;
+          color: #93a0b1;
+          font-size: 16px;
+          margin-right: 15px;
+          font-family: "Circular Std", sans-serif;
+          &::placeholder {
+            color: #93a0b1;
+            font-size: 16px;
+            font-family: "Circular Std", sans-serif;
+          }
+        }
+        div {
+          background-color: #171618;
+          border-radius: 90px;
+          font-size: 16px;
+          color: #fff;
+          padding: 15px 49px;
+          cursor: pointer;
+        }
       }
     }
   }
