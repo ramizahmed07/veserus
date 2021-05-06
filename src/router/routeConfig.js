@@ -1,3 +1,4 @@
+import { Redirect } from "react-router";
 import { SampleIntegrations } from "../components/ApiDocsContainer";
 import ApiDocsHome from "../components/ApiDocsContainer/ApiDocsHome";
 import AboutUs from "../pages/AboutUs";
@@ -159,7 +160,7 @@ const routeConfig = [
   },
   {
     path: "/",
-    component: () => <div>Homepage</div>,
+    component: () => <Redirect to="/features" />,
     key: "Home",
     exact: true,
   },
