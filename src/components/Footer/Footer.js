@@ -53,7 +53,11 @@ const Footer = () => {
             <div className="footer__rightCol__col__title">User Information</div>
             <div className="footer__rightCol__col__links">
               {USER_INFORMATION_LINKS.map(({ title, path }) => (
-                <Link className="footer__rightCol__col__links__link" to={path}>
+                <Link
+                  key={path}
+                  className="footer__rightCol__col__links__link"
+                  to={path}
+                >
                   {title}
                 </Link>
               ))}
@@ -66,7 +70,11 @@ const Footer = () => {
             <div className="footer__rightCol__col__title">Company</div>
             <div className="footer__rightCol__col__links">
               {COMPANY_LINKS.map(({ title, path }) => (
-                <Link className="footer__rightCol__col__links__link" to={path}>
+                <Link
+                  key={path}
+                  className="footer__rightCol__col__links__link"
+                  to={path}
+                >
                   {title}
                 </Link>
               ))}

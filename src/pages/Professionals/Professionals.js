@@ -3,9 +3,9 @@ import React, { useEffect, useState } from "react";
 import Arrow from "../../assets/images/backArrowDark.png";
 import ProfessionalsCover from "../../assets/images/professionals.png";
 import BookIcon from "../../assets/images/book.png";
-import "./Professionals.scss";
 import { PROFESSIONALS, PROFESSIONALS_RESOURCE_CARDS } from "./data";
 import ResourceCards from "../../components/ResourceCards";
+import "./Professionals.scss";
 
 const Professionals = () => {
   const [mQuery, setMQuery] = useState(

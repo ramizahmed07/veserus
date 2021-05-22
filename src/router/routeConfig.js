@@ -1,9 +1,9 @@
 import { Redirect } from "react-router-dom";
-
 import { SampleIntegrations } from "../components/ApiDocsContainer";
 import ApiDocsHome from "../components/ApiDocsContainer/ApiDocsHome";
 import AboutUs from "../pages/AboutUs";
 import ApiDocs from "../pages/ApiDocs";
+import BrandAssets from "../pages/BrandAssets";
 import Contact from "../pages/Contact";
 import Features from "../pages/Features";
 import Partners from "../pages/Partners";
@@ -151,6 +151,12 @@ const routeConfig = [
     path: `${PATHS.PROFESSIONALS}`,
     component: Professionals,
     key: "Professionals",
+    headerColor: "#465364",
+  },
+  {
+    path: `${PATHS.BRAND_ASSETS}`,
+    component: BrandAssets,
+    key: "Brand Assets",
     headerColor: "#465364",
   },
   {

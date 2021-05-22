@@ -1,0 +1,286 @@
+@import "../../css/styles/colors";
+@import "../../css/styles/mixins.scss";
+
+.assets {
+  @include header-gap;
+  &__header {
+    @include header-gap-width;
+    justify-content: space-between;
+    align-items: center;
+    @include mobile {
+      margin-bottom: 30px;
+    }
+    &__left {
+      &__title {
+        @include header-gap-title;
+      }
+      p {
+        margin-top: 50px;
+        color: #465364;
+        max-width: 510px;
+        line-height: clamp(30px, 1.7vw, 38px);
+        font-size: clamp(20px, 1.2vw, 25px);
+        @media (min-width: 1660px) {
+          max-width: 600px;
+        }
+        @include tablet {
+          margin-top: 28px;
+          font-size: clamp(17px, 2vw, 20px);
+          line-height: clamp(25px, 3vw, 27px);
+        }
+        @include mobile {
+          margin-top: 30px;
+          width: 247px;
+          font-size: clamp(14px, 4.5vw, 17px);
+          line-height: clamp(20px, 6vw, 25px);
+        }
+      }
+    }
+    &__right {
+      position: relative;
+      right: 40px;
+      @include desktop-sm {
+        right: 0;
+      }
+      img {
+        @include tablet {
+          width: 300px;
+          height: 300px;
+          object-fit: contain;
+        }
+        @include mobile {
+          display: none;
+        }
+      }
+    }
+  }
+  &__content {
+    padding-bottom: 164px;
+    @include tablet {
+      padding-bottom: 50px;
+    }
+    @include mobile {
+      padding-bottom: 0;
+    }
+    &__logoContainer {
+      width: 100%;
+      height: 290px;
+      background: #f7f7f7;
+      display: flex;
+      justify-content: space-between;
+
+      @include tablet {
+        height: 200px;
+      }
+      @include mobile {
+        flex-direction: column;
+        justify-content: unset;
+        height: 311px;
+      }
+      &__left {
+        background-color: $primary-color;
+        width: 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include desktop-sm {
+          width: 30%;
+        }
+        @include tablet {
+          width: 30%;
+          img {
+            width: 154px;
+            height: 40px;
+          }
+        }
+        @include mobile {
+          height: 100px;
+          width: 100%;
+          img {
+            width: 154px;
+            height: 40px;
+          }
+        }
+      }
+      &__right {
+        width: 75%;
+        padding: 0 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        @include desktop-sm {
+          width: 70%;
+        }
+        @include tablet {
+          width: 70%;
+          padding: 0 32px;
+        }
+        @include mobile {
+          padding: 0 20px;
+          height: 211px;
+          width: 100%;
+        }
+        div {
+          font-size: 26px;
+          color: $heading-color;
+          font-family: "Sohne 600", sans-serif;
+          margin-bottom: 18px;
+          @include tablet {
+            font-size: 20px;
+            margin-bottom: 10px;
+          }
+          @include mobile {
+            font-size: 16px;
+            margin-bottom: 10px;
+          }
+        }
+
+        p {
+          margin-bottom: 30px;
+          font-size: 18px;
+          color: #293340;
+          line-height: 31px;
+          max-width: 90%;
+          font-family: "Inter Regular", sans-serif;
+          @include desktop-sm {
+            max-width: 100%;
+          }
+          @include tablet {
+            font-size: 15px;
+            margin-bottom: 16px;
+            line-height: 25px;
+            max-width: 100%;
+          }
+          @include mobile {
+            font-size: 14px;
+            line-height: 21px;
+            max-width: 100%;
+            margin-bottom: 16px;
+          }
+        }
+
+        a {
+          text-decoration: none;
+          color: #5f54d8;
+          display: flex;
+          align-items: center;
+          font-size: 17px;
+          img {
+            margin-left: 10px;
+          }
+          @include tablet {
+            font-size: 15px;
+            img {
+              width: 12px;
+              margin-left: 7px;
+            }
+          }
+          @include mobile {
+            font-size: 15px;
+            img {
+              width: 12px;
+              margin-left: 7px;
+            }
+          }
+        }
+      }
+    }
+    &__section {
+      margin-top: 80px;
+      @include tablet {
+        margin-top: 50px;
+      }
+      @include mobile {
+        margin-top: 30px;
+      }
+      &__title {
+        color: #293340;
+        font-size: 15px;
+        margin-bottom: 50px;
+        text-align: center;
+        font-family: "Sohne 500", sans-serif;
+        @include tablet {
+          margin-bottom: 17px;
+        }
+        @include mobile {
+          font-size: 14px;
+          margin-bottom: 20px;
+          text-align: left;
+        }
+      }
+      &__blog {
+        display: flex;
+        flex-direction: column;
+        &__link {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 91px;
+          border-top: 1px solid #ebeaeb;
+          color: $heading-color;
+          text-decoration: none;
+          font-family: "Sohne 500", sans-serif;
+          font-size: 18px;
+          &:last-of-type {
+            border-bottom: 1px solid #ebeaeb;
+          }
+          @include mobile {
+            height: 82px;
+            font-size: 15px;
+            line-height: 25px;
+            img {
+              display: none;
+            }
+          }
+        }
+      }
+      &__media {
+        display: flex;
+        justify-content: space-between;
+        @include mobile {
+          flex-direction: column;
+          justify-content: unset;
+        }
+        &__item {
+          width: 32%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          @include tablet {
+            width: 48%;
+          }
+          @include mobile {
+            width: 100%;
+            margin-bottom: 30px;
+          }
+          img {
+            width: 100%;
+            object-fit: contain;
+          }
+          div {
+            color: $heading-color;
+            font-size: 24px;
+            font-family: "Sohne 600", sans-serif;
+            margin-bottom: 20px;
+            margin-top: 24px;
+            @include tablet {
+              margin-bottom: 14px;
+              margin-top: 23px;
+            }
+            @include mobile {
+              font-size: 20px;
+              margin-bottom: 14px;
+              margin-top: 14px;
+            }
+          }
+          p {
+            font-size: 13px;
+            text-transform: uppercase;
+            color: #465364;
+          }
+        }
+      }
+    }
+  }
+}

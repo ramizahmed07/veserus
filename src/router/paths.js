@@ -34,6 +34,7 @@ export const API_DOCS_ALL_PRODUCTS = `/api-docs/all-products`;
 export const TEAM = "/team";
 export const PARTNERS = "/partners";
 export const PROFESSIONALS = "/professionals";
+export const BRAND_ASSETS = "/brand-assets";
 
 const PATHS = {
   HOME_PAGE,
@@ -64,6 +65,7 @@ const PATHS = {
   TEAM,
   PARTNERS,
   PROFESSIONALS,
+  BRAND_ASSETS,
 };
 
 export default PATHS;

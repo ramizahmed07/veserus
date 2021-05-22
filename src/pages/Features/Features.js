@@ -17,16 +17,25 @@ const Features = () => {
     window.innerWidth <= 1024 ? true : false
   );
 
+  const [mobile, setMobile] = useState(window.innerWidth <= 767 ? true : false);
+
   useEffect(() => {
     let mediaQuery = window.matchMedia("(max-width: 1300px)");
+    let mobile = window.matchMedia("(max-width: 767px)");
     mediaQuery.addEventListener("change", handleMQuery);
+    mobile.addEventListener("change", handleMobile);
     // this is the cleanup function to remove the listener
-    return () => mediaQuery.removeEventListener("change", handleMQuery);
+    return () => {
+      mediaQuery.removeEventListener("change", handleMQuery);
+      mobile.removeEventListener("change", handleMobile);
+    };
   }, []);
 
   const handleMQuery = () =>
     setMQuery(window.innerWidth <= 1300 ? true : false);
 
+  const handleMobile = () => setMobile(window.innerWidth <= 767 ? true : false);
+  console.log({ mobile, mQuery });
   return (
     <UseSmoothScroll>
       <div className="features">
@@ -81,7 +90,7 @@ const Features = () => {
                 </div>
               </div>
 
-              <div class="features__content__steps__footer">
+              <div className="features__content__steps__footer">
                 <div className="features__content__steps__step">
                   <img src={SearchIcon} alt="icon" />
                   <div className="features__content__steps__step__title">
@@ -122,18 +131,31 @@ const Features = () => {
                 )}
               </div>
               <div className="features__content__transfers__desc">
-                {!mQuery
-                  ? `
+                {!mQuery ? (
+                  `
                   Instant transfers allow you to send money from Veserus to a
                   wallet address, typically within minute. Instant transfers can
                   be made 24 hours a day, 365 days a year regardless of holiday or
                   weekend schedules.`
-                  : `
+                ) : mobile ? (
+                  <span>
+                    When you want to send money from your account, all you need
+                    to do is specify the address and amount of the wallet you
+                    want to send.
+                    <br />
+                    <br />
+                    For a store using the Veserus widget, just click the "Pay"
+                    button. Your money has been sent, check out the last
+                    transactions menu!
+                  </span>
+                ) : (
+                  `
                   When you want to send money from your account, all you
 need to do is specify the address and amount of the wallet you
 want to send. For a store using the Veserus widget, just
 click the "Pay" button. Your money has been sent, check out
-the last transactions menu!`}
+the last transactions menu!`
+                )}
               </div>
             </div>
             <div className="features__content__transfers__orderImg">
@@ -172,10 +194,10 @@ the last transactions menu!`}
             <img src={VeserusUI} alt="blockchain" />
           </div>
           <div className="features__content__platform">
-            <div class="features__content__platform__title">
+            <div className="features__content__platform__title">
               A <span>real</span> trading platform
             </div>
-            <div class="features__content__platform__desc">
+            <div className="features__content__platform__desc">
               Thanks to Veserus's revolutionary exchange interface, it is very
               easy to follow the latest price movements in the cryptocurrency
               world and to make purchases and sales. Buy or sell. It's all that
@@ -193,6 +215,10 @@ the last transactions menu!`}
                 {!mQuery ? (
                   <Fragment>
                     <span>Veserus.bank</span> - Very Soon.
+                  </Fragment>
+                ) : mobile ? (
+                  <Fragment>
+                    Very soon – <span>Veserus bank</span> 2021.
                   </Fragment>
                 ) : (
                   <Fragment>
@@ -236,9 +262,13 @@ the last transactions menu!`}
               <div className="features__content__contact__right">
                 <input
                   type="text"
-                  placeholder="Type in your e-mail address..."
+                  placeholder={
+                    mobile
+                      ? "Type e-mail address..."
+                      : "Type in your e-mail address..."
+                  }
                 />
-                <div>Get started</div>
+                <div>{mobile ? "Go" : "Get started"}</div>
               </div>
             </div>
           </div>
