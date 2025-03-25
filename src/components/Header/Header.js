@@ -19,15 +19,6 @@ const LINKS = [
     title: 'About us',
     path: PATHS.ABOUT_PAGE,
   },
-  {
-    title: 'Help',
-    path: PATHS.HELP_PAGE,
-  },
-  {
-    title: 'Sign In',
-    path: PATHS.LOGIN_PAGE,
-    signIn: true,
-  },
 ];
 
 const Header = () => {
