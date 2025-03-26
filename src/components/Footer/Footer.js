@@ -5,7 +5,6 @@ import './footer.scss';
 import PATHS from '../../router/paths';
 
 const FOOTER_LEFT_LINKS = [
-  { title: 'Veserus', path: '/veserus' },
   { title: 'Resources', path: '/resources' },
   { title: 'Contacts', path: PATHS.CONTACT_PAGE },
   { title: 'Team', path: PATHS.TEAM },
